@@ -1,7 +1,7 @@
 
 #include "gomezj_stats.hpp"
 
-mySpace::stats::myClass(){
+mySpace::stats::stats(){
 
 
 }
@@ -11,7 +11,7 @@ float mySpace::stats::set_max(std::vector<float> *data){
     float max_value = data->at(0);
     for(auto x = data->begin(); x != data->end(); ++x){
         
-        if data->at(x) > max_value{
+        if (data->at(x) > max_value){
             max_value = data->at(x);
         }
     }
@@ -23,7 +23,7 @@ float mySpace::stats::set_min(std::vector<float>  *data){
     float min_value = data->at(0);
     for(auto x = data->begin(); x != data->end(); ++x){
         
-        if data->at(x) < min_value{
+        if (data->at(x) < min_value){
             min_value = data->at(x);
         }
     }
@@ -58,4 +58,26 @@ float mySpace::stats::get_mean() {
 
     return mean;
     
+}
+
+
+int main(int argc, char *argv[]) {
+
+
+    std::ifstream fin("ERP/ERP00/ERP0010.txt");
+    
+    std::vector<float> *data;
+    int element;
+    while (fin >> element)
+    {
+        data->push_back(element);
+    }
+
+   
+    mySpace::stats somevariablename;
+
+    
+    somevariablename.set_max(data);
+
+    somevariablename.get_max();
 }
