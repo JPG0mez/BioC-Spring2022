@@ -9,24 +9,24 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
-
+#include <math.h>
 
 namespace mySpace{
     class stats{
         
     public:
-        stats();
-        float set_max(std::vector<float> *data);
-        float set_min(std::vector<float> *data);
-        float set_mean(std::vector<float> *data);
-        float set_SD(std::vector<float> *data);
-        float set_hist(std::vector<float> *data);
+        stats(int, int);
+        void set_max(std::vector<float> *data);
+        void set_min(std::vector<float> *data);
+        void set_mean(std::vector<float> *data);
+        void set_SD(std::vector<float> *data);
+        void set_hist(std::vector<float> *data);
     
-        void get_max();
-        void get_min();
-        void get_mean();
-        void get_SD();
-        void get_hist();
+        float get_max();
+        float get_min();
+        float get_mean();
+        float get_SD();
+        float get_hist();
 
     
     private:
