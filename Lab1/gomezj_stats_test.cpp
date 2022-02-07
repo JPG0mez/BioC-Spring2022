@@ -13,10 +13,10 @@ int main(int argc, char *argv[]) {
     }
 
    
-    mySpace::stats somevariablename;
+    mySpace::stats::stats somevariablename();
 
     
-    somevariablename.set_max(data);
+    somevariablename().set_max(data);
 
-    somevariablename.get_max();
+    somevariablename().get_max();
 }

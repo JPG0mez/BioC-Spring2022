@@ -5,11 +5,12 @@ mySpace::stats::stats(){
 
 
 }
+//    for(float x = data->begin(); x != data->end(); ++x){
 
 float mySpace::stats::set_max(std::vector<float> *data){
 
     float max_value = data->at(0);
-    for(auto x = data->begin(); x != data->end(); ++x){
+    for(int x: *data){
         
         if (data->at(x) > max_value){
             max_value = data->at(x);
@@ -21,7 +22,7 @@ float mySpace::stats::set_max(std::vector<float> *data){
 float mySpace::stats::set_min(std::vector<float>  *data){
 
     float min_value = data->at(0);
-    for(auto x = data->begin(); x != data->end(); ++x){
+    for(int x: *data){
         
         if (data->at(x) < min_value){
             min_value = data->at(x);
@@ -33,12 +34,12 @@ float mySpace::stats::set_min(std::vector<float>  *data){
 float mySpace::stats::set_mean(std::vector<float>  *data){
 
     float mean_value = data->at(0);
-    for(auto x = data->begin(); x != data->end(); ++x){
+    for(int x: *data){
         
         mean_value = mean_value + data->at(x);
     }
     mean_value = mean_value/(data->size);
-    this->min = min_value;
+    this->min = mean_value;
 }
 
 
@@ -47,37 +48,37 @@ float mySpace::stats::get_max() {
     return this->max;
     
 }
-s
+
 float mySpace::stats::get_min() {
 
-    return min;
+    return this->min;
     
 }
 
 float mySpace::stats::get_mean() {
 
-    return mean;
+    return this->mean;
     
 }
 
 
-int main(int argc, char *argv[]) {
+// int main(int argc, char *argv[]) {
 
 
-    std::ifstream fin("ERP/ERP00/ERP0010.txt");
+//     std::ifstream fin("ERP/ERP00/ERP0010.txt");
     
-    std::vector<float> *data;
-    int element;
-    while (fin >> element)
-    {
-        data->push_back(element);
-    }
+//     std::vector<float> *data;
+//     int element;
+//     while (fin >> element)
+//     {
+//         data->push_back(element);
+//     }
 
    
-    mySpace::stats somevariablename;
+//     mySpace::stats somevariablename;
 
     
-    somevariablename.set_max(data);
+//     somevariablename.set_max(data);
 
-    somevariablename.get_max();
-}
+//     somevariablename.get_max();
+// }
