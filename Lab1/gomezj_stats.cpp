@@ -50,7 +50,8 @@ void mySpace::stats::set_SD(std::vector<float>  *data){
     for(int x : *data){
         std_dev_value = std_dev_value + pow((x-SD_mean), 2);
     }
-
+    std_dev_value = sqrt(std_dev_value/data->size());
+    this->SD_dev = std_dev_value;
 }
 
 float mySpace::stats::get_max() {

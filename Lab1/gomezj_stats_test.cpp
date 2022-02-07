@@ -2,12 +2,16 @@
 #include "gomezj_stats.hpp"
 int main(int argc, char *argv[]) {
 
-
+    //Initialize input file
     std::ifstream file;
-    
     std::vector<float> data;
     float element;
     file.open(argv[1]); 
+    //Leave if doesnt exists
+    if(file.fail()){
+        printf ("File does not exist\n");
+        exit (EXIT_FAILURE);
+    }
     while (file >> element)
     {
         data.push_back(element);
@@ -31,4 +35,9 @@ int main(int argc, char *argv[]) {
     somevariablename.set_mean(&data);
     float mean_value = somevariablename.get_mean();
     printf("The Mean value is %f\n", mean_value);
+    //Calculate Standard Dev
+    somevariablename.set_SD(&data);
+    float SD_value = somevariablename.get_SD();
+    printf("The Standard Deviation value is %f\n", SD_value);
+
 }
