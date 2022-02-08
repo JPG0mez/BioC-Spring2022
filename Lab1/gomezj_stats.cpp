@@ -54,6 +54,73 @@ void mySpace::stats::set_SD(std::vector<float>  *data){
     this->SD_dev = std_dev_value;
 }
 
+void mySpace::stats::set_hist(std::vector<float> *data){
+    //Initializing vector for upper and lower limits of bins
+    std::vector<float> bins;
+    std::vector<int> bins_values;
+    // set and get Standard deviation using functions defined earlier in this code
+    this->set_SD(data);
+    float std_dev_value = this->get_SD();
+
+    //set values for bin width, min, and max
+    float minimum_value = -3.0 * std_dev_value;
+    float maximum_value = 3.0 * std_dev_value;
+    float bin_width = 0.4 * std_dev_value;
+
+    float edge = minimum_value;
+
+    
+    while(edge < maximum_value){
+        bins.push_back(edge);
+        bins_values.push_back(0);
+        edge = edge + bin_width;
+    }
+
+    // Value at the end of the vector contains maximum value of histogram
+    bins.push_back(maximum_value);
+    
+    for(int x = 0; x < data->size(); x++){
+        for(int y = 0; y < bins_values.size(); y++){
+            if(data->at(x) >= bins.at(y) && data->at(x) < bins.at(y+1)){
+                bins_values.at(y) = bins_values.at(y) + 1;
+            }
+        }
+    }
+    
+    //Display histogram to terminal
+    printf("\t\t This is my histogram. I want to cry\t\n");
+    std::cout << R"(
+ /$$   /$$ /$$             /$$                                                         
+| $$  | $$|__/            | $$                                                         
+| $$  | $$ /$$  /$$$$$$$ /$$$$$$    /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  /$$$$$$/$$$$ 
+| $$$$$$$$| $$ /$$_____/|_  $$_/   /$$__  $$ /$$__  $$ /$$__  $$|____  $$| $$_  $$_  $$
+| $$__  $$| $$|  $$$$$$   | $$    | $$  \ $$| $$  \ $$| $$  \__/ /$$$$$$$| $$ \ $$ \ $$
+| $$  | $$| $$ \____  $$  | $$ /$$| $$  | $$| $$  | $$| $$      /$$__  $$| $$ | $$ | $$
+| $$  | $$| $$ /$$$$$$$/  |  $$$$/|  $$$$$$/|  $$$$$$$| $$     |  $$$$$$$| $$ | $$ | $$
+|__/  |__/|__/|_______/    \___/   \______/  \____  $$|__/      \_______/|__/ |__/ |__/
+                                             /$$  \ $$                                 
+                                            |  $$$$$$/                                 
+                                             \______/                                 )" << '\n';
+    for (int i = 0; i < 90; i++) {
+        printf("-");
+    }
+    for (int i = 0; i < bins_values.size(); i++) {
+        // prints value for each bin
+        printf("\n%f: ", bins.at(i));    
+        for (int k = 0; k < bins_values.at(i); k++) {
+            //prints = for bins frequency
+            printf("=");   
+        }
+    }
+    printf("\n");
+    for (int i = 0; i < 90; i++) {
+        printf("-");
+    }
+    printf("\nThat's all I hope you enjoyed it\n");
+}
+
+
+
 float mySpace::stats::get_max() {
 
     return this->max;

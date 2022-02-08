@@ -1,7 +1,7 @@
 /* This code will act as a primer on class design and creation in C++
 */
-#ifndef  Lab1
-#define Lab1
+#ifndef  Lab123
+#define Lab123
 #include <iostream>
 #include <fstream>
 #include <string>

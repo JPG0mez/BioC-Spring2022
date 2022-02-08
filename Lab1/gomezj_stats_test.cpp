@@ -26,18 +26,20 @@ int main(int argc, char *argv[]) {
     //Calculate Max
     somevariablename.set_max(&data);
     float max_value = somevariablename.get_max();
-    printf("The maximum value is %f\n", max_value);
+    printf("The maximum value is: %f\n", max_value);
     //Calculate Min
     somevariablename.set_min(&data);
     float min_value = somevariablename.get_min();
-    printf("The mininum value is %f\n", min_value);
+    printf("The mininum value is: %f\n", min_value);
     //Calculate Mean
     somevariablename.set_mean(&data);
     float mean_value = somevariablename.get_mean();
-    printf("The Mean value is %f\n", mean_value);
+    printf("The Mean value is: %f\n", mean_value);
     //Calculate Standard Dev
     somevariablename.set_SD(&data);
     float SD_value = somevariablename.get_SD();
-    printf("The Standard Deviation value is %f\n", SD_value);
+    printf("The Standard Deviation value is: %f\n", SD_value);
 
+    //set histogram
+    somevariablename.set_hist(&data);
 }
