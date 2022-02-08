@@ -10,7 +10,7 @@ mySpace::stats::stats(int, int){
 void mySpace::stats::set_max(std::vector<float> *data){
 
     float max_value = data->at(0);
-    for(int x: *data){
+    for(float x: *data){
         
         if (x > max_value){
             max_value = x;
@@ -22,7 +22,7 @@ void mySpace::stats::set_max(std::vector<float> *data){
 void mySpace::stats::set_min(std::vector<float>  *data){
 
     float min_value = data->at(0);
-    for(int x: *data){
+    for(float x: *data){
         
         if (x < min_value){
             min_value = x;
@@ -34,7 +34,7 @@ void mySpace::stats::set_min(std::vector<float>  *data){
 void mySpace::stats::set_mean(std::vector<float>  *data){
 
     float mean_value = 0;
-    for(int x: *data){
+    for(float x: *data){
         
         mean_value = mean_value + x;
     }
@@ -47,7 +47,7 @@ void mySpace::stats::set_SD(std::vector<float>  *data){
     this->set_mean(data);
     float SD_mean = this->get_mean();
 
-    for(int x : *data){
+    for(float x : *data){
         std_dev_value = std_dev_value + pow((x-SD_mean), 2);
     }
     std_dev_value = sqrt(std_dev_value/data->size());
