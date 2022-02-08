@@ -1,4 +1,7 @@
-/* This code will act as a primer on class design and creation in C++
+/* 
+02/07/2022
+Juan Pablo Gomez
+Header file for functions used in part1 of lab 1
 */
 #ifndef  Lab123
 #define Lab123
