@@ -116,6 +116,7 @@ void mySpace::stats::set_hist(std::vector<float> *data){
     for (int i = 0; i < 90; i++) {
         printf("-");
     }
+    printf("\t'=' is equivilant to 1 val in the bin\n");
     printf("\nThat's all I hope you enjoyed it\n");
 }
 
