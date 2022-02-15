@@ -1,5 +1,6 @@
-#include "gomezj_stats.cpp"
 #include "gomezj_stats.hpp"
+#include "gomezj_corr.hpp"
+
 int main(int argc, char *argv[]) {
 
     //Initialize input file

@@ -1,5 +1,5 @@
 #include "gomezj_stats.hpp"
-
+#include "gomezj_corr.hpp"
 mySpace::stats::stats(int, int){
 
     this->min;
@@ -107,7 +107,7 @@ void mySpace::stats::set_hist(std::vector<float> *data){
     for (int i = 0; i < bins_values.size(); i++) {
         // prints value for each bin
         printf("\n%f: ", bins.at(i));    
-        for (int k = 0; k < bins_values.at(i); k++) {
+        for (int k = 0; k < bins_values.at(i); k+=10) {
             //prints = for bins frequency
             printf("=");   
         }

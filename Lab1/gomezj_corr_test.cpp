@@ -6,8 +6,7 @@ C file for testing fucntions written
 
 #include "gomezj_corr.hpp"
 #include "gomezj_stats.hpp"
-#include "gomezj_corr.cpp"
-#include "gomezj_stats.cpp"
+
 
 int main(int argc, char * argv[]) {
     

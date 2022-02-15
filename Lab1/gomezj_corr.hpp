@@ -13,7 +13,7 @@ Header file for functions used in corr part of lab 1
 #include <stdint.h>
 #include <stdio.h>
 #include <math.h>
-
+#include "gomezj_stats.hpp"
 namespace mySpace{
     class corr{
         
