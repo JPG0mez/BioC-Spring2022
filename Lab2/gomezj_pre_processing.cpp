@@ -19,7 +19,7 @@ void JpSpaceprocess::preprocess::openfile(std::string filename, std::vector<int>
         printf ("File %i is missing\n", filenum);
         exit (EXIT_FAILURE);
     }
-    printf("printing input file %i\n", filenum);
+    //printf("printing input file %i\n", filenum);
     while (file >> element)
     {
         outputname->push_back(element);
@@ -80,42 +80,42 @@ int main(int argc, char* argv[]){
     std::vector<int> redsubtractoutput;
   
     vectorinstance.Subtract(&output1, &output2, &redsubtractoutput);
-    printf("Subtracted Red from Red background data\n");
+    //printf("Subtracted Red from Red background data\n");
     // for (int i: redsubtractoutput)
     // std::cout << i << ' ' << '\n';
 
     std::vector<int> greensubtractoutput;
     vectorinstance.Subtract(&output3, &output4, &greensubtractoutput);
-    printf("Subtracted green from green background data\n");
+    //printf("Subtracted green from green background data\n");
     // for (int i: greensubtractoutput)
     // std::cout << i << ' ' << '\n';
 
     //Calculates Mean for corrected red and green values
     float red_mean_value;
     red_mean_value = vectorinstance.Sum(&redsubtractoutput)/redsubtractoutput.size();
-    printf("The Mean value of the corrected Red data is: %f\n", red_mean_value);
+    //printf("The Mean value of the corrected Red data is: %f\n", red_mean_value);
 
     float green_mean_value;
     green_mean_value = vectorinstance.Sum(&greensubtractoutput)/greensubtractoutput.size();
-    printf("The Mean value of the corrected Green data is: %f\n", green_mean_value);
+    //printf("The Mean value of the corrected Green data is: %f\n", green_mean_value);
 
     //Normalize datasets
-    printf("Normalized Red\n");
+    //printf("Normalized Red\n");
     std::vector<float> normalized_red;
     vectorinstance.Division(&redsubtractoutput, red_mean_value, &normalized_red);
     // for (float i: normalized_red)
     // std::cout << i << ' ' << '\n';
 
-    printf("Normalized Green\n");
+    //printf("Normalized Green\n");
     std::vector<float> normalized_green;
     vectorinstance.Division(&greensubtractoutput, green_mean_value, &normalized_green);
     // for (float i: normalized_green)
     // std::cout << i << ' ' << '\n';
 
-    printf("Calculated Log Intensity Ratio\n");
+    //printf("Calculated Log Intensity Ratio\n");
     std::vector<float> LogIntensityRatio;
     instance.logIR(&normalized_red, &normalized_green, &LogIntensityRatio);
-
+    LogIntensityRatio.resize(atoi(argv[6]));
     std::ofstream outFile(argv[5]);
     // the important part
     for (const auto &value : LogIntensityRatio) outFile << value << "\n";

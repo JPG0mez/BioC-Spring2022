@@ -81,10 +81,10 @@ int main(int argc, char* argv[]){
     float criteria = 1.0 ;
     int run=1;
     while(criteria > 0.0001){
-        printf("Starting run %i\n", run);
-        printf("Old mean for cluster1 is %f\n", cluster1.get_obj_mean());
-        printf("Old mean for cluster2 is %f\n", cluster2.get_obj_mean());
-        printf("Old mean for cluster3 is %f\n", cluster3.get_obj_mean());
+        // printf("Starting run %i\n", run);
+        // printf("Old mean for cluster1 is %f\n", cluster1.get_obj_mean());
+        // printf("Old mean for cluster2 is %f\n", cluster2.get_obj_mean());
+        // printf("Old mean for cluster3 is %f\n", cluster3.get_obj_mean());
         for (float element : data){
             distance1 = cluster1.distance(element);
             distance2 = cluster2.distance(element);
@@ -114,20 +114,20 @@ int main(int argc, char* argv[]){
 
         statcluster1.set_mean(&cluster1.cluster_set);
         float new_mean_value1 = statcluster1.get_mean();
-        printf("The Suppresed Mean value is: %f\n", new_mean_value1);
+        // printf("The Suppresed Mean value is: %f\n", new_mean_value1);
 
         statcluster2.set_mean(&cluster2.cluster_set);
         float new_mean_value2 = statcluster2.get_mean();
-        printf("The Stationary Mean value is: %f\n", new_mean_value2);
+        // printf("The Stationary Mean value is: %f\n", new_mean_value2);
 
         statcluster3.set_mean(&cluster3.cluster_set);
         float new_mean_value3 = statcluster3.get_mean();
-        printf("The Expressed Mean value is: %f\n", new_mean_value3);
+        //printf("The Expressed Mean value is: %f\n", new_mean_value3);
 
         //calculate criteria
         criteria = abs(mean_supressed - new_mean_value1) + abs(mean_stationary - new_mean_value2) + abs(mean_expressed - new_mean_value3);
 
-        printf("the criteria is %f\n", criteria);
+        //printf("the criteria is %f\n", criteria);
 
         //Set new means for next loop
         cluster1.set_obj_mean(new_mean_value1);
@@ -135,9 +135,9 @@ int main(int argc, char* argv[]){
         cluster3.set_obj_mean(new_mean_value3);
 
         //print size
-        printf("Cluster 1 size: %li\n",cluster1.cluster_set.size());
-        printf("Cluster 2 size: %li\n",cluster2.cluster_set.size());
-        printf("Cluster 3 size: %li\n",cluster3.cluster_set.size());
+        // printf("Cluster 1 size: %li\n",cluster1.cluster_set.size());
+        // printf("Cluster 2 size: %li\n",cluster2.cluster_set.size());
+        // printf("Cluster 3 size: %li\n",cluster3.cluster_set.size());
         //clear vector
         cluster1.cluster_set.clear();
         cluster2.cluster_set.clear();
@@ -145,7 +145,7 @@ int main(int argc, char* argv[]){
         run = run + 1;
         }   
     //Final run with good means calculated
-    printf("Starting final run\n");
+    // printf("Starting final run\n");
 
     //Get gene names from file
     std::ifstream genefile;
@@ -157,7 +157,7 @@ int main(int argc, char* argv[]){
         printf ("gene name list is missing\n");
         exit (EXIT_FAILURE);
     }
-    printf("printing data\n");
+    //printf("printing data\n");
     while (genefile >> element)
     {
         gene_name.push_back(element);
@@ -167,10 +167,10 @@ int main(int argc, char* argv[]){
     genefile.close();
 
     int gene_num = 0;
-    std::ofstream supressedfile;
+    std::ofstream suppressedfile;
     std::ofstream stationaryfile;
     std::ofstream expressedfile;
-    supressedfile.open ("suppressed_genes.txt");
+    suppressedfile.open ("suppressed_genes.txt");
     stationaryfile.open ("stationary_genes.txt");
     expressedfile.open ("expressed_genes.txt");
     
@@ -183,7 +183,7 @@ int main(int argc, char* argv[]){
 
         if (distance1 < distance2 && distance1 < distance3) {
             cluster1.cluster_set.push_back(element);
-            supressedfile << gene_name[gene_num] << '\n';
+            suppressedfile << gene_name[gene_num] << '\n';
         }
         else if (distance2 < distance1 && distance2 < distance3) {
             cluster2.cluster_set.push_back(element);
@@ -196,7 +196,13 @@ int main(int argc, char* argv[]){
         }
         gene_num = gene_num + 1;
     }
-    supressedfile.close();
+    printf("The Final mean for Suppressed gene cluster is %f\n", cluster1.get_obj_mean());
+    printf("The Final mean for Stationary gene cluster is %f\n", cluster2.get_obj_mean());
+    printf("The Final mean for Expressed gene cluster is %f\n", cluster3.get_obj_mean());
+    printf("Number of Suppressed genes: %li\n",cluster1.cluster_set.size());
+    printf("Number of Stationary genes: %li\n",cluster2.cluster_set.size());
+    printf("Number of Expressed genes: %li\n",cluster3.cluster_set.size());
+    suppressedfile.close();
     stationaryfile.close();
     expressedfile.close();
 }
