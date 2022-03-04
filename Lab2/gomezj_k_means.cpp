@@ -189,8 +189,7 @@ int main(int argc, char* argv[]){
             cluster2.cluster_set.push_back(element);
             stationaryfile << gene_name[gene_num] << '\n';
         }
-        //else if (distance3 < distance1 && distance3 < distance2) {
-        else{
+        else if (distance3 < distance1 && distance3 < distance2) {
             cluster3.cluster_set.push_back(element);
             expressedfile << gene_name[gene_num] << '\n';
         }

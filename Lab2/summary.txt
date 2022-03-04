@@ -1,49 +1,49 @@
 Final Data for Time point 0
-The Final mean for Suppressed gene cluster is -0.099297
-The Final mean for Stationary gene cluster is -0.013048
-The Final mean for Expressed gene cluster is 0.078739
-Number of Suppressed genes: 1765
-Number of Stationary genes: 2674
-Number of Expressed genes: 1561
+The Final mean for Suppressed gene cluster is -0.099139
+The Final mean for Stationary gene cluster is -0.013183
+The Final mean for Expressed gene cluster is 0.078772
+Number of Suppressed genes: 1816
+Number of Stationary genes: 2727
+Number of Expressed genes: 1575
 Final Data for Time point 1
-The Final mean for Suppressed gene cluster is -0.503960
-The Final mean for Stationary gene cluster is -0.042351
-The Final mean for Expressed gene cluster is 0.273198
-Number of Suppressed genes: 680
-Number of Stationary genes: 3639
-Number of Expressed genes: 1681
+The Final mean for Suppressed gene cluster is -0.504427
+The Final mean for Stationary gene cluster is -0.042326
+The Final mean for Expressed gene cluster is 0.272756
+Number of Suppressed genes: 694
+Number of Stationary genes: 3719
+Number of Expressed genes: 1705
 Final Data for Time point 2
-The Final mean for Suppressed gene cluster is -0.307667
-The Final mean for Stationary gene cluster is -0.007358
-The Final mean for Expressed gene cluster is 0.297856
-Number of Suppressed genes: 1116
-Number of Stationary genes: 3586
-Number of Expressed genes: 1298
+The Final mean for Suppressed gene cluster is -0.307215
+The Final mean for Stationary gene cluster is -0.007941
+The Final mean for Expressed gene cluster is 0.296420
+Number of Suppressed genes: 1135
+Number of Stationary genes: 3651
+Number of Expressed genes: 1332
 Final Data for Time point 3
-The Final mean for Suppressed gene cluster is -0.296573
-The Final mean for Stationary gene cluster is 0.038593
-The Final mean for Expressed gene cluster is 0.540208
-Number of Suppressed genes: 1628
-Number of Stationary genes: 3700
-Number of Expressed genes: 672
+The Final mean for Suppressed gene cluster is -0.296211
+The Final mean for Stationary gene cluster is 0.037237
+The Final mean for Expressed gene cluster is 0.535221
+Number of Suppressed genes: 1652
+Number of Stationary genes: 3773
+Number of Expressed genes: 693
 Final Data for Time point 4
-The Final mean for Suppressed gene cluster is -0.377975
-The Final mean for Stationary gene cluster is 0.041694
-The Final mean for Expressed gene cluster is 0.703722
-Number of Suppressed genes: 1913
-Number of Stationary genes: 3396
-Number of Expressed genes: 691
+The Final mean for Suppressed gene cluster is -0.376159
+The Final mean for Stationary gene cluster is 0.041551
+The Final mean for Expressed gene cluster is 0.703748
+Number of Suppressed genes: 1954
+Number of Stationary genes: 3466
+Number of Expressed genes: 698
 Final Data for Time point 5
-The Final mean for Suppressed gene cluster is -0.319716
-The Final mean for Stationary gene cluster is 0.036818
-The Final mean for Expressed gene cluster is 0.662510
-Number of Suppressed genes: 2002
-Number of Stationary genes: 3407
-Number of Expressed genes: 591
+The Final mean for Suppressed gene cluster is -0.321588
+The Final mean for Stationary gene cluster is 0.032326
+The Final mean for Expressed gene cluster is 0.648982
+Number of Suppressed genes: 2008
+Number of Stationary genes: 3486
+Number of Expressed genes: 624
 Final Data for Time point 6
-The Final mean for Suppressed gene cluster is -0.316097
-The Final mean for Stationary gene cluster is 0.022421
-The Final mean for Expressed gene cluster is 0.725387
-Number of Suppressed genes: 2303
-Number of Stationary genes: 3197
-Number of Expressed genes: 500
+The Final mean for Suppressed gene cluster is -0.315259
+The Final mean for Stationary gene cluster is 0.021549
+The Final mean for Expressed gene cluster is 0.723729
+Number of Suppressed genes: 2350
+Number of Stationary genes: 3261
+Number of Expressed genes: 507
